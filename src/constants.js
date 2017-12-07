@@ -1,0 +1,1 @@
+export const GIPHY_API_KEY = "E3GvG8eclPCpFbU6snxpz1lnYwZAHS4x";
