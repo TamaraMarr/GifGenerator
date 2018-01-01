@@ -79,7 +79,7 @@ export default class Search extends Component {
                 <input className="col-8 col-sm-8 col-md-8 col-lg-10 col-xl-10 Search_inputLineStyle" placeholder="Search" value={this.state.searchedGif} onChange={this.getQuery} onKeyPress={this.handleEnterBtn} />
                 <button className="col-4 col-sm-4 col-md-4 col-lg-2 col-xl-2 Search_buttonStyle" onClick={this.handleClick}>Find your gif</button>
                 {this.state.isThereError ? <p className="Search_errorStyle">There's been an error, please reload the page</p> : ""}
-                {this.state.noSearchString ? <p className="Search_errorStyle">Please enter a search theme</p> : ""}
+                {this.state.noSearchString ? <p className="Search_errorStyle">Please enter a search term</p> : ""}
                 {this.state.noResultsError ? <p className="Search_errorStyle">No results found</p> : ""}
             </div>
         );

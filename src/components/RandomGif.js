@@ -7,7 +7,7 @@ export default class RandomGif extends Component {
 		super(props);
 
 		this.state = {
-            randomNum: 0
+			randomNum: 0
         };
         
         this.bindInit();
