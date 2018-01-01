@@ -1,5 +1,3 @@
-## GifGenerator
-
 ### About
 
 GifGenerator uses Giphy's API to generate a random gif based on a searched term.
@@ -8,10 +6,10 @@ Demo: [GifGenerator](https://tamaramarr.github.io/giphyProject/).
 
 ### Stack
 
-Languages: HTML5, CSS3, JavaScript (ES6)
-Framework: React, Bootstrap
-Module Loader: Webpack
-Package Manager: Yarn
+Languages: HTML5, CSS3, JavaScript (ES6)<br />
+Framework: React, Bootstrap<br />
+Module Loader: Webpack<br />
+Package Manager: Yarn<br />
 
 ### Screenshots
 
