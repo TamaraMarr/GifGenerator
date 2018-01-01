@@ -1,43 +1,37 @@
 import React, { Component } from 'react';
 
-import './App.css';
 import Search from "./components/Search";
+import RandomGif from "./components/RandomGif";
 
-class App extends Component {
+import './App.css';
+
+export default class App extends Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			searchGif: "",
-			shouldDisplayGif: false,
-			currentGifData: "",
-			randomNum: 0
-		}
+			gifInfo: []
+		};
 
 		this.bindInit();
 	}
 
 	bindInit() {
-		this.displayGif = this.displayGif.bind(this);
+		this.getGifUrl = this.getGifUrl.bind(this);
 	}
 
-	displayGif(gifData) {
+	getGifUrl(gifData) {		
 		this.setState({
-			currentGifData: gifData,
-			shouldDisplayGif: true,
-			randomNum: Math.floor(Math.random() * 499)
-		})
+			gifInfo: gifData
+		});
 	}
-
+	
 	render() {
-		console.log(this.state.currentGif);
 		return (
-			<div className="container">
-				<Search getGif={this.displayGif} />
-				{this.state.shouldDisplayGif ? <img className="col-12" src={this.state.currentGifData[this.state.randomNum].images.original.url} alt="Gif"/> : <img src="https://i.giphy.com/media/3o7bu8sRnYpTOG1p8k/giphy.webp" className="col-6 offset-3" alt="Default gif" />}
+			<div className="container col-12 col-sm-12 col-md-12 col-lg-10 col-xl-8">
+				<Search getGif={this.getGifUrl}/>
+				<RandomGif currentGifData={this.state.gifInfo}/>
 			</div>
-		);
+		)
 	}
 }
-
-export default App;

@@ -1,0 +1,27 @@
+.Search_errorStyle {
+    color: red;
+    font-style: italic;
+    width: 100%;
+    text-align: center
+}
+
+.Search_buttonStyle {
+    background-color: #689F38;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    margin: 10px auto;
+    height: 50px;
+}
+
+.Search_buttonStyle:hover {
+    background-color: #8BC34A;
+}
+
+.Search_inputLineStyle {
+    padding: 5px;
+    border: none;
+    border-bottom: 3px solid #689F38;
+    background-color: #BDBDBD;
+    margin: 10px auto;
+}

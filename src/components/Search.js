@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
+
 import { fetchService } from "../services/fetchService";
 
-class Search extends Component {
+import "./Search.css";
+
+export default class Search extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
             searchedGif: "",
-            isThereError: false
+            isThereError: false,
+            noSearchString: false,
+            noResultsError: false
         }
 
         this.bindInit();
@@ -24,20 +29,42 @@ class Search extends Component {
         })
     }
 
+    resetErrors() {
+        this.setState({
+            isThereError: false,
+            noSearchString: false,
+            noResultsError: false
+        })
+    }
+
     handleClick() {
+        this.resetErrors();
+
         const searchedGif = this.state.searchedGif;
 
-        fetchService.getGif(searchedGif, (response) => {
-            this.props.getGif(response);
-        }, (error) => {
+        if(!searchedGif) {
             this.setState({
-                isThereError: true
+                noSearchString: true
             })
-        });
-
-        this.setState({
-            searchedGif: ""
-        })
+        } else {
+            fetchService.getGif(searchedGif, (response) => {
+                this.setState({
+                    noSearchString: false,
+                    searchedGif: ""
+                })
+                if(response.length === 0) {
+                    this.setState({
+                        noResultsError: true
+                    })
+                } else {
+                    this.props.getGif(response);
+                }
+            }, (error) => {
+                this.setState({
+                    isThereError: true
+                })
+            });
+        }
     }
 
     handleEnterBtn = (event) => {
@@ -49,12 +76,12 @@ class Search extends Component {
     render() {
         return (
             <div className="row">
-                <input className="col-10" placeholder="Search" value={this.state.searchedGif} onChange={this.getQuery} onKeyPress={this.handleEnterBtn} />
-                <button height="50px" onClick={this.handleClick} className="col-2 ">Find your gif</button>
-                {this.state.isThereError ? <p>There's been an error, please reload the page</p> : ""}
+                <input className="col-8 col-sm-8 col-md-8 col-lg-10 col-xl-10 Search_inputLineStyle" placeholder="Search" value={this.state.searchedGif} onChange={this.getQuery} onKeyPress={this.handleEnterBtn} />
+                <button className="col-4 col-sm-4 col-md-4 col-lg-2 col-xl-2 Search_buttonStyle" onClick={this.handleClick}>Find your gif</button>
+                {this.state.isThereError ? <p className="Search_errorStyle">There's been an error, please reload the page</p> : ""}
+                {this.state.noSearchString ? <p className="Search_errorStyle">Please enter a search theme</p> : ""}
+                {this.state.noResultsError ? <p className="Search_errorStyle">No results found</p> : ""}
             </div>
         );
     }
 }
-
-export default Search;
