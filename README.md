@@ -1,4 +1,4 @@
-### About
+### Gif generator
 
 GifGenerator uses Giphy's API to generate a random gif based on a searched term.
 
