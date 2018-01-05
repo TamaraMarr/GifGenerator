@@ -1,7 +1,7 @@
 {
   "name": "giphyproject",
   "version": "0.1.0",
-  "homepage": "https://tamaramarr.github.io/GifGenerator",
+  "homepage": "https://tamaramarr.github.io/gif-generator",
   "dependencies": {
     "axios": "^0.17.1",
     "react": "^16.2.0",

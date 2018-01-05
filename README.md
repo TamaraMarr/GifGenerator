@@ -2,7 +2,7 @@
 
 GifGenerator uses Giphy's API to generate a random gif based on a searched term.
 
-Demo: [GifGenerator](https://tamaramarr.github.io/GifGenerator/).
+Demo: [GifGenerator](https://tamaramarr.github.io/gif-generator/).
 
 ### Stack
 
