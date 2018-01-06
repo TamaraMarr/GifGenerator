@@ -46,7 +46,7 @@ export default class RandomGif extends Component {
 				) : (
 					<img
                         className="col-8 offset-2 col-lg-6 offset-lg-3 col-xl-6 offset-xl-3 RandomGif_defaultGifStyle"
-						src="https://i.giphy.com/media/kzVL1ZLuGfEfm/giphy.webp"
+						src="https://media.giphy.com/media/kzVL1ZLuGfEfm/giphy.gif"
 						alt="Default gif"
 					/>
 				)}
