@@ -1,27 +1,46 @@
+/* @import url('https://fonts.googleapis.com/css?family=Courgette'); */
+@import url('https://fonts.googleapis.com/css?family=VT323');
+
+
+.Search_headerStyle {
+    margin-top: 25px;
+    font-family: 'VT323', monospace;
+    color: #2196F3;
+    font-size: 4rem;
+    cursor: pointer;
+}
+
+.wrapper {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.flexItem {
+    flex: 1;
+}
+
+.inputFlex {
+    flex: 13;
+}
+
+.flexElement {
+    flex: 1;
+}
+
+.headerFlex {
+    flex: 7;
+}
+
 .Search_errorStyle {
-    color: red;
-    font-style: italic;
-    width: 100%;
-    text-align: center
+	color: red;
+	font-style: italic;
+	width: 100%;
+	text-align: center;
 }
 
-.Search_buttonStyle {
-    background-color: #689F38;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    margin: 10px auto;
-    height: 50px;
-}
-
-.Search_buttonStyle:hover {
-    background-color: #8BC34A;
-}
-
-.Search_inputLineStyle {
-    padding: 5px;
-    border: none;
-    border-bottom: 3px solid #689F38;
-    background-color: #BDBDBD;
-    margin: 10px auto;
+.Search_defaultGifStyle {
+    /* position: fixed; */
+    /* right: 17%;
+    top: 3%; */
+    /* min-width: 15%; */
 }
