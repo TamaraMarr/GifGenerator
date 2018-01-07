@@ -4,6 +4,7 @@ import getMuiTheme from "material-ui/styles/getMuiTheme";
 import TextField from "material-ui/TextField";
 import IconButton from "material-ui/IconButton";
 
+import Header from "../common/Header";
 import { fetchService } from "../services/fetchService";
 
 import "./Search.css";
@@ -99,37 +100,19 @@ export default class Search extends Component {
 	render() {
 		return (
 			<MuiThemeProvider muiTheme={muiTheme}>
-				<div>
-					<div className="wrapper">
-						<h1
-							className="Search_headerStyle flexElement headerFlex"
-							onClick={this.reloadPage}
-						>
-							GifGenerator
-						</h1>
-						{this.state.searchEntered ? (
-							""
-						) : (
-							<img
-								className="Search_defaultGifStyle flexElement"
-								src="https://media.giphy.com/media/xP5kh2WPIhqhy/giphy.gif"
-								alt="Default gif"
-							/>
-						)}
-					</div>
-					<div
-						className="wrapper"
-						style={{ marginTop: this.state.searchEntered ? "" : "15%" }}
-					>
+				<Header searchEntered={this.state.searchEntered} />
+				<div className="grid-wrapper">
+					<div style={{ marginTop: this.state.searchEntered ? "" : "15%", display: "flex" }}>
 						<TextField
 							hintText="Search"
 							value={this.state.searchedGif}
 							onChange={this.getQuery}
 							onKeyPress={this.handleEnterBtn}
-							className="flexItem inputFlex"
+							className="Search_inputStyle"
 						/>
-
-						<IconButton className="flexItem" onClick={this.handleClick}>
+					</div>
+					<div style={{ marginTop: this.state.searchEntered ? "" : "20%" }}>
+						<IconButton onClick={this.handleClick}>
 							<i
 								className="material-icons"
 								style={{ color: "white", verticalAlign: "middle" }}
@@ -139,7 +122,6 @@ export default class Search extends Component {
 						</IconButton>
 					</div>
 				</div>
-
 				{this.state.isThereError ? (
 					<p className="Search_errorStyle">
 						There's been an error, please reload the page

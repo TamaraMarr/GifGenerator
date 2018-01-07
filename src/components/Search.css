@@ -1,36 +1,3 @@
-/* @import url('https://fonts.googleapis.com/css?family=Courgette'); */
-@import url('https://fonts.googleapis.com/css?family=VT323');
-
-
-.Search_headerStyle {
-    margin-top: 25px;
-    font-family: 'VT323', monospace;
-    color: #2196F3;
-    font-size: 4rem;
-    cursor: pointer;
-}
-
-.wrapper {
-    display: flex;
-    flex-flow: row wrap;
-}
-
-.flexItem {
-    flex: 1;
-}
-
-.inputFlex {
-    flex: 13;
-}
-
-.flexElement {
-    flex: 1;
-}
-
-.headerFlex {
-    flex: 7;
-}
-
 .Search_errorStyle {
 	color: red;
 	font-style: italic;
@@ -38,9 +5,13 @@
 	text-align: center;
 }
 
-.Search_defaultGifStyle {
-    /* position: fixed; */
-    /* right: 17%;
-    top: 3%; */
-    /* min-width: 15%; */
+.Search_inputStyle {
+	width: 100%;
+	flex: 1;
+}
+
+.grid-wrapper {
+    display: grid;
+	grid-template-columns: 1fr 50px;
+	align-items: flex-end;
 }

@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=VT323');
+
+.Search_headerStyle {
+    margin-top: 25px;
+    font-family: 'VT323', monospace;
+    color: #2196F3;
+    font-size: 4rem;
+    cursor: pointer;
+}
+
+.Search_defaultGifStyle {
+    min-width: 15%;
+    margin-top: 5%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
