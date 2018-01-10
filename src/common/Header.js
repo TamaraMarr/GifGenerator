@@ -9,9 +9,7 @@ const Search = props => {
 		<MuiThemeProvider>
 			<div className="grid-container">
 				<div className="headerTitle">
-					<h1 className="Search_headerStyle" onClick={this.reloadPage}>
-						GifGenerator
-					</h1>
+					<img src="https://i.imgur.com/z7yjSEH.png" className="Search_headerStyle" onClick={this.reloadPage} alt="GifGenerator" />
 				</div>
 				<div className="defaultGif">
 					{props.searchEntered.length !== 0

@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=VT323");
-
 .grid-container {
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
@@ -16,13 +14,13 @@
 
 .Search_headerStyle {
 	margin-top: 25px;
-	font-family: "VT323", monospace;
-	color: #2196f3;
-	font-size: 5vw;
+	width: 25vw;
+	min-width: 200px;
+	height: auto;
 	cursor: pointer;
-}
+ }
 
 .Search_defaultGifStyle {
-    width: 70%;
-    height: auto;
+	width: 70%;
+	height: auto;
 }
