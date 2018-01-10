@@ -4,7 +4,6 @@ import getMuiTheme from "material-ui/styles/getMuiTheme";
 import TextField from "material-ui/TextField";
 import IconButton from "material-ui/IconButton";
 
-import Header from "../common/Header";
 import { fetchService } from "../services/fetchService";
 
 import "./Search.css";
@@ -100,45 +99,55 @@ export default class Search extends Component {
 	render() {
 		return (
 			<MuiThemeProvider muiTheme={muiTheme}>
-				<Header searchEntered={this.state.searchEntered} />
-				<div className="grid-wrapper">
-					<div style={{ marginTop: this.state.searchEntered ? "" : "15%", display: "flex" }}>
-						<TextField
-							hintText="Search"
-							value={this.state.searchedGif}
-							onChange={this.getQuery}
-							onKeyPress={this.handleEnterBtn}
-							className="Search_inputStyle"
-						/>
+				<div>
+					<div className="gridWrapper">
+						<div
+							className="searchInput"
+							style={{
+								marginTop: this.state.searchEntered ? "" : "15%",
+								display: "flex"
+							}}
+						>
+							<TextField
+								hintText="Search"
+								value={this.state.searchedGif}
+								onChange={this.getQuery}
+								onKeyPress={this.handleEnterBtn}
+								className="Search_inputStyle"
+							/>
+						</div>
+						<div
+							className="searchButton"
+							style={{ marginTop: this.state.searchEntered ? "" : "20%" }}
+						>
+							<IconButton onClick={this.handleClick}>
+								<i
+									className="material-icons Search_searchButtonStyle"
+									style={{ color: "white", verticalAlign: "middle" }}
+								>
+									search
+								</i>
+							</IconButton>
+						</div>
 					</div>
-					<div style={{ marginTop: this.state.searchEntered ? "" : "20%" }}>
-						<IconButton onClick={this.handleClick}>
-							<i
-								className="material-icons"
-								style={{ color: "white", verticalAlign: "middle" }}
-							>
-								search
-							</i>
-						</IconButton>
-					</div>
+					{this.state.isThereError ? (
+						<p className="Search_errorStyle">
+							There's been an error, please reload the page
+						</p>
+					) : (
+						""
+					)}
+					{this.state.noSearchString ? (
+						<p className="Search_errorStyle">Please enter a search term</p>
+					) : (
+						""
+					)}
+					{this.state.noResultsError ? (
+						<p className="Search_errorStyle">No results found</p>
+					) : (
+						""
+					)}
 				</div>
-				{this.state.isThereError ? (
-					<p className="Search_errorStyle">
-						There's been an error, please reload the page
-					</p>
-				) : (
-					""
-				)}
-				{this.state.noSearchString ? (
-					<p className="Search_errorStyle">Please enter a search term</p>
-				) : (
-					""
-				)}
-				{this.state.noResultsError ? (
-					<p className="Search_errorStyle">No results found</p>
-				) : (
-					""
-				)}
 			</MuiThemeProvider>
 		);
 	}

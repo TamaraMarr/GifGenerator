@@ -1,8 +1,15 @@
-.Search_errorStyle {
-	color: red;
-	font-style: italic;
-	width: 100%;
-	text-align: center;
+.gridWrapper {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+}
+
+.searchInput {
+	grid-column: span 11;
+}
+
+.searchButton {
+	grid-column: 1fr;
+	align-self: end;
 }
 
 .Search_inputStyle {
@@ -10,8 +17,13 @@
 	flex: 1;
 }
 
-.grid-wrapper {
-    display: grid;
-	grid-template-columns: 1fr 50px;
-	align-items: flex-end;
+.Search_searchButtonStyle {
+	text-align: center;
+}
+
+.Search_errorStyle {
+	color: red;
+	font-style: italic;
+	width: 100%;
+	text-align: center;
 }

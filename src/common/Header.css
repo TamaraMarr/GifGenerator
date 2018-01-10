@@ -1,19 +1,28 @@
-@import url('https://fonts.googleapis.com/css?family=VT323');
+@import url("https://fonts.googleapis.com/css?family=VT323");
+
+.grid-container {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+}
+
+.headerTitle {
+	grid-column: span 8;
+}
+
+.defaultGif {
+	grid-column: span 4;
+	text-align: right;
+}
 
 .Search_headerStyle {
-    margin-top: 25px;
-    font-family: 'VT323', monospace;
-    color: #2196F3;
-    font-size: 4rem;
-    cursor: pointer;
+	margin-top: 25px;
+	font-family: "VT323", monospace;
+	color: #2196f3;
+	font-size: 5vw;
+	cursor: pointer;
 }
 
 .Search_defaultGifStyle {
-    min-width: 15%;
-    margin-top: 5%;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
+    width: 70%;
+    height: auto;
 }

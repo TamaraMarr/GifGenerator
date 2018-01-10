@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 import Search from "./components/Search";
+import Header from "./common/Header";
 import RandomGif from "./components/RandomGif";
 
-import './App.css';
+import "./App.css";
 
 export default class App extends Component {
 	constructor(props) {
@@ -20,18 +21,33 @@ export default class App extends Component {
 		this.getGifUrl = this.getGifUrl.bind(this);
 	}
 
-	getGifUrl(gifData) {		
+	getGifUrl(gifData) {
 		this.setState({
 			gifInfo: gifData
 		});
 	}
-	
+
 	render() {
 		return (
-			<div className="container col-12 col-sm-12 col-md-12 col-lg-10 col-xl-8">
-				<Search getGif={this.getGifUrl}/>
-				<RandomGif currentGifData={this.state.gifInfo}/>
+			<div className="container-grid">
+				<div></div>
+				<div></div>
+
+				<div className="header">
+					<Header searchEntered={this.state.gifInfo}/>
+				</div>
+
+				<div className="search">
+					<Search getGif={this.getGifUrl} />
+				</div>
+
+				<div className="randomGif">
+					<RandomGif currentGifData={this.state.gifInfo} />
+				</div>
+
+				<div></div>
+				<div></div>
 			</div>
-		)
+		);
 	}
 }
