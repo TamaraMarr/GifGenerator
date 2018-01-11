@@ -1,3 +1,46 @@
+.grid_container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto auto;
+}
+
+.RandomGif_imgDiv {
+    grid-column: 1fr;
+    display: -webkit-flex; /* Safari */
+   -webkit-justify-content: center; /* Safari 7.0+ */
+    display: flex;
+    justify-content: center;
+}
+
 .RandomGif_imageStyle {
-    margin-top: 5%;
+    width: 100%;
+    height: auto;
+    grid-row: 1 / 2;
+    margin: 0 auto;
+    margin-top: 3rem;
+    position: relative;    
+    z-index: 10;
+}
+
+.RandomGif_tryAgainButton {
+    grid-row: 2 / 3;
+    position: absolute;
+    width: 100%;
+    z-index: 9;
+}
+
+.RandomGif_copyGifURL {
+    grid-row: 3 / 4;
+    position: absolute;
+    width: 100%;
+    z-index: 9;
+    margin-bottom: 100px;
+}
+
+.RandomGif_inputStyle {
+    grid-row: 3 / 4;
+    position: absolute;
+    /* width: 100%; */
+    flex: 1;
+    z-index: 9;
 }

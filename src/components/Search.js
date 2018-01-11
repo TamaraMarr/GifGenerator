@@ -20,6 +20,7 @@ export default class Search extends Component {
 
 		this.state = {
 			searchedGif: "",
+			searchValue: "",
 			isThereError: false,
 			noSearchString: false,
 			noResultsError: false,
@@ -52,7 +53,8 @@ export default class Search extends Component {
 		this.resetErrors();
 
 		this.setState({
-			searchEntered: true
+			searchEntered: true,
+			searchValue: this.state.searchedGif
 		});
 
 		const searchedGif = this.state.searchedGif;
@@ -109,7 +111,7 @@ export default class Search extends Component {
 							}}
 						>
 							<TextField
-								hintText="Search"
+								hintText="Find your gif"
 								value={this.state.searchedGif}
 								onChange={this.getQuery}
 								onKeyPress={this.handleEnterBtn}
@@ -129,6 +131,12 @@ export default class Search extends Component {
 								</i>
 							</IconButton>
 						</div>
+						{this.state.searchEntered
+							? <div className="inputValue">
+								<p className="Search_inputValueStyle">Entered term: {this.state.searchValue}</p>
+							  </div>
+							: ""
+						}
 					</div>
 					{this.state.isThereError ? (
 						<p className="Search_errorStyle">

@@ -1,24 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=VT323');
+
 .gridWrapper {
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: 1fr auto;
 }
 
 .searchInput {
 	grid-column: span 11;
+	grid-row: 1 / 2;
 }
 
 .searchButton {
 	grid-column: 1fr;
+	grid-row: 1 / 2;
 	align-self: end;
 }
 
 .Search_inputStyle {
 	width: 100%;
 	flex: 1;
+	position: relative;
 }
 
 .Search_searchButtonStyle {
+	grid-row: 1 / 2;
 	text-align: center;
+	z-index: 10;
+}
+
+.inputValue {
+	grid-row: 2 / 3;
+}
+
+.Search_inputValueStyle {
+	position: absolute;
+	z-index: 9;
+	font-family: 'VT323', monospace;
+	color: #2196F3;
+	font-size: 1.4rem;
+	text-transform: uppercase;
 }
 
 .Search_errorStyle {

@@ -4,8 +4,8 @@
     grid-template-rows: repeat(auto-fill, 1fr);
     grid-template-areas:
         ". . h . ."
-        ". . r . ."
-        ". . s . .";
+        ". . s . ."
+        ". . r . .";
     margin: 0 25px;
 }
 
@@ -14,12 +14,12 @@
     grid-row: 1 / 2;
 }
 
-.randomGif {
-    grid-column: r;
+.search {
+    grid-column: s;
     grid-row: 2 / 3;
 }
 
-.search {
-    grid-column: s;
-    grid-row: 3 / 4;
+.randomGif {
+    grid-column: r;
+    grid-row: 3 / -1;
 }

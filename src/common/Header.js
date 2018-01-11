@@ -4,12 +4,16 @@ import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import "./Header.css";
 
 const Search = props => {
-	console.log(props.searchEntered);
+
+	const reloadPage = () => {
+		document.location.reload()
+	}
+
 	return (
 		<MuiThemeProvider>
 			<div className="grid-container">
 				<div className="headerTitle">
-					<img src="https://i.imgur.com/z7yjSEH.png" className="Search_headerStyle" onClick={this.reloadPage} alt="GifGenerator" />
+					<img src="https://i.imgur.com/z7yjSEH.png" className="Search_headerStyle" alt="GifGenerator" onClick={reloadPage} />
 				</div>
 				<div className="defaultGif">
 					{props.searchEntered.length !== 0

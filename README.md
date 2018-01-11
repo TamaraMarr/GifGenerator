@@ -6,8 +6,8 @@ Demo: [GifGenerator](https://tamaramarr.github.io/gif-finder/).
 
 ### Stack
 
-Languages: HTML5, CSS3, JavaScript (ES6)<br />
-Framework: React, Bootstrap<br />
+Languages: HTML5, CSS3 (+CSS Grid), JavaScript (ES6)<br />
+Framework: React, Material-UI<br />
 Module Loader: Webpack<br />
 Package Manager: Yarn<br />
 
