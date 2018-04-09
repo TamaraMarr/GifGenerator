@@ -1,5 +1,4 @@
 import React from "react";
-import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 
 import "./Header.css";
 
@@ -10,23 +9,21 @@ const Search = props => {
 	}
 
 	return (
-		<MuiThemeProvider>
-			<div className="grid-container">
-				<div className="headerTitle">
-					<img src="https://i.imgur.com/z7yjSEH.png" className="Search_headerStyle" alt="GifFinder" onClick={reloadPage} />
-				</div>
-				<div className="defaultGif">
-					{props.searchEntered.length !== 0
-						? ""
-						: <img
-							className="Search_defaultGifStyle"
-							src="https://media.giphy.com/media/xP5kh2WPIhqhy/giphy.gif"
-							alt="Default gif"
-						/>
-					}
-				</div>
+		<div className="grid-container">
+			<div className="headerTitle">
+				<img src="https://i.imgur.com/z7yjSEH.png" className="Search_headerStyle" alt="GifFinder" onClick={reloadPage} />
 			</div>
-		</MuiThemeProvider>
+			<div className="defaultGif">
+				{props.searchEntered.length !== 0
+					? ""
+					: <img
+						className="Search_defaultGifStyle"
+						src="https://i.giphy.com/media/xUOwFXiC5Nfq6SKBKo/giphy.webp"
+						alt="Default gif"
+					/>
+				}
+			</div>
+		</div>
 	);
 };
 

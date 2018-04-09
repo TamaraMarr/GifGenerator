@@ -30,9 +30,6 @@ export default class App extends Component {
 	render() {
 		return (
 			<div className="container-grid">
-				<div></div>
-				<div></div>
-
 				<div className="header">
 					<Header searchEntered={this.state.gifInfo}/>
 				</div>
@@ -44,9 +41,6 @@ export default class App extends Component {
 				<div className="randomGif">
 					<RandomGif currentGifData={this.state.gifInfo} />
 				</div>
-
-				<div></div>
-				<div></div>
 			</div>
 		);
 	}
